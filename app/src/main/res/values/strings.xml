@@ -1,5 +1,17 @@
 <resources>
     <string name="app_name">GuestNote</string>
     <string name="app_title">Guest Note</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="about">Dev \n Okta Pratama Nainggolan</string>
+    <string name="kategori_prompt">Pilih Kategori</string>
 
+    <string-array name="kategori_arrays">
+        <item>Pilih Kategori...</item>
+        <item>Sport</item>
+        <item>Music</item>
+        <item>IT</item>
+        <item>Finance</item>
+        <item>Lifestyle</item>
+        <item>Health</item>
+    </string-array>
 </resources>

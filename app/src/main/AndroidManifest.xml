@@ -2,6 +2,18 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="id.oc.okta.guestnote">
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality.
+    -->
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+
     <application
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
@@ -9,14 +21,36 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
-        <activity android:name=".SearchEventActivity">
-        </activity>
-        <activity android:name=".AboutActivity"/>
-        <activity android:name=".AddEventActivity"/>
-        <activity android:name=".AddNoteActivity"/>
-        <activity android:name=".NoteActivity"/>
-        <activity android:name=".KategoriActivity"/>
-        <activity android:name=".MainActivity">
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             NoteModel that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+                android:name="com.google.android.geo.API_KEY"
+                android:value="@string/google_maps_key"/>
+
+        <uses-library android:name="com.google.android.maps"/>
+
+        <activity
+                android:name=".fitur.AboutActivity"
+                android:theme="@style/AppThemes"/>
+        <activity android:name=".fitur.AddEventActivity"/>
+        <activity android:name=".fitur.AddNoteActivity"/>
+        <activity
+                android:name=".fitur.NoteActivity"
+                android:theme="@style/AppThemes"/>
+        <activity
+                android:name=".fitur.EventActivity"
+                android:theme="@style/AppThemes"/>
+        <activity
+                android:name=".fitur.MainActivity"
+                android:theme="@style/AppThemes">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
